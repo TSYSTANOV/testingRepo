@@ -1,13 +1,11 @@
-import { useContext } from "react";
-import { imageContext } from "../../../Context/ImageContext";
+import { useSelector } from "react-redux";
 
 function ImageCard(props) {
-  const data = useContext(imageContext)
-  console.log(data)
+  const { image } = useSelector((state) => state.image);
   return (
     <>
       <img
-        src={data || props.img}
+        src={image.urlImg || props.img}
         alt="Фон картинки"
         width={840}
         height={520}
